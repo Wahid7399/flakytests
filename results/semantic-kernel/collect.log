@@ -1,0 +1,297 @@
+tests/unit/agents/autogen_conversable_agent/test_autogen_conversable_agent.py: 8
+tests/unit/agents/azure_ai_agent/test_agent_content_generation.py: 18
+tests/unit/agents/azure_ai_agent/test_agent_thread_actions.py: 23
+tests/unit/agents/azure_ai_agent/test_azure_ai_agent.py: 22
+tests/unit/agents/azure_ai_agent/test_azure_ai_agent_settings.py: 2
+tests/unit/agents/azure_ai_agent/test_azure_ai_agent_utils.py: 6
+tests/unit/agents/azure_ai_agent/test_azure_ai_channel.py: 4
+tests/unit/agents/azure_ai_agent/test_mcp_tool_approval.py: 13
+tests/unit/agents/bedrock_agent/test_action_group_utils.py: 5
+tests/unit/agents/bedrock_agent/test_bedrock_action_group_model.py: 4
+tests/unit/agents/bedrock_agent/test_bedrock_agent.py: 40
+tests/unit/agents/bedrock_agent/test_bedrock_agent_channel.py: 13
+tests/unit/agents/bedrock_agent/test_bedrock_agent_event_type.py: 3
+tests/unit/agents/bedrock_agent/test_bedrock_agent_model.py: 4
+tests/unit/agents/bedrock_agent/test_bedrock_agent_settings.py: 3
+tests/unit/agents/bedrock_agent/test_bedrock_agent_status.py: 2
+tests/unit/agents/chat_completion/test_chat_completion_agent.py: 23
+tests/unit/agents/chat_completion/test_chat_history_channel.py: 7
+tests/unit/agents/copilot_studio/test_copilot_studio_agent.py: 11
+tests/unit/agents/open_ai/test_openai_responses_agent_reasoning.py: 31
+tests/unit/agents/openai_assistant/test_assistant_thread_actions.py: 27
+tests/unit/agents/openai_assistant/test_azure_assistant_agent.py: 28
+tests/unit/agents/openai_assistant/test_open_ai_assistant_channel.py: 10
+tests/unit/agents/openai_assistant/test_openai_assistant_agent.py: 38
+tests/unit/agents/openai_responses/test_openai_responses_agent.py: 28
+tests/unit/agents/openai_responses/test_openai_responses_thread_actions.py: 10
+tests/unit/agents/orchestration/test_concurrent.py: 8
+tests/unit/agents/orchestration/test_group_chat.py: 16
+tests/unit/agents/orchestration/test_handoff.py: 18
+tests/unit/agents/orchestration/test_magentic.py: 19
+tests/unit/agents/orchestration/test_orchestration_base.py: 17
+tests/unit/agents/orchestration/test_orchestration_tools.py: 6
+tests/unit/agents/orchestration/test_sequential.py: 8
+tests/unit/agents/runtime/test_message_serialization.py: 9
+tests/unit/agents/runtime/test_runtime.py: 11
+tests/unit/agents/test_agent.py: 30
+tests/unit/agents/test_group_chat/test_agent_channel.py: 3
+tests/unit/agents/test_group_chat/test_agent_chat.py: 17
+tests/unit/agents/test_group_chat/test_agent_chat_utils.py: 2
+tests/unit/agents/test_group_chat/test_agent_group_chat.py: 19
+tests/unit/agents/test_group_chat/test_broadcast_queue.py: 11
+tests/unit/agents/test_group_chat_strategies/test_aggregator_termination_strategy.py: 4
+tests/unit/agents/test_group_chat_strategies/test_default_termination_strategy.py: 1
+tests/unit/agents/test_group_chat_strategies/test_kernel_function_selection_strategy.py: 5
+tests/unit/agents/test_group_chat_strategies/test_kernel_function_termination_strategy.py: 5
+tests/unit/agents/test_group_chat_strategies/test_sequential_strategy_selection.py: 6
+tests/unit/agents/test_group_chat_strategies/test_termination_strategy.py: 4
+tests/unit/agents/test_run_polling_options.py: 5
+tests/unit/connectors/ai/anthropic/services/test_anthropic_chat_completion.py: 26
+tests/unit/connectors/ai/anthropic/test_anthropic_request_settings.py: 9
+tests/unit/connectors/ai/azure_ai_inference/services/test_azure_ai_inference_chat_completion.py: 21
+tests/unit/connectors/ai/azure_ai_inference/services/test_azure_ai_inference_text_embedding.py: 9
+tests/unit/connectors/ai/azure_ai_inference/services/test_azure_ai_inference_tracing.py: 6
+tests/unit/connectors/ai/azure_ai_inference/services/test_azure_ai_inference_utils.py: 11
+tests/unit/connectors/ai/azure_ai_inference/test_azure_ai_inference_request_settings.py: 8
+tests/unit/connectors/ai/bedrock/services/test_bedrock_chat_completion.py: 38
+tests/unit/connectors/ai/bedrock/services/test_bedrock_model_provider_utils.py: 32
+tests/unit/connectors/ai/bedrock/services/test_bedrock_text_completion.py: 20
+tests/unit/connectors/ai/bedrock/services/test_bedrock_text_embedding_generation.py: 16
+tests/unit/connectors/ai/bedrock/test_bedrock_request_settings.py: 7
+tests/unit/connectors/ai/google/google_ai/services/test_google_ai_chat_completion.py: 25
+tests/unit/connectors/ai/google/google_ai/services/test_google_ai_text_completion.py: 13
+tests/unit/connectors/ai/google/google_ai/services/test_google_ai_text_embedding.py: 15
+tests/unit/connectors/ai/google/google_ai/services/test_google_ai_user_agent.py: 7
+tests/unit/connectors/ai/google/google_ai/services/test_google_ai_utils.py: 9
+tests/unit/connectors/ai/google/google_ai/test_google_ai_request_settings.py: 8
+tests/unit/connectors/ai/google/test_shared_utils.py: 20
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py: 19
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py: 8
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py: 11
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_utils.py: 9
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py: 8
+tests/unit/connectors/ai/hugging_face/test_hf_text_completions.py: 32
+tests/unit/connectors/ai/hugging_face/test_hf_text_embedding.py: 3
+tests/unit/connectors/ai/mistral_ai/services/test_mistralai_chat_completion.py: 29
+tests/unit/connectors/ai/mistral_ai/services/test_mistralai_text_embeddings.py: 13
+tests/unit/connectors/ai/mistral_ai/test_mistralai_request_settings.py: 9
+tests/unit/connectors/ai/nvidia/prompt_execution_settings/test_nvidia_prompt_execution_settings.py: 9
+tests/unit/connectors/ai/nvidia/services/test_nvidia_chat_completion.py: 8
+tests/unit/connectors/ai/nvidia/services/test_nvidia_handler.py: 5
+tests/unit/connectors/ai/nvidia/services/test_nvidia_text_embedding.py: 7
+tests/unit/connectors/ai/nvidia/settings/test_nvidia_settings.py: 5
+tests/unit/connectors/ai/ollama/services/test_ollama_chat_completion.py: 19
+tests/unit/connectors/ai/ollama/services/test_ollama_text_completion.py: 12
+tests/unit/connectors/ai/ollama/services/test_ollama_text_embedding.py: 9
+tests/unit/connectors/ai/ollama/services/test_utils.py: 12
+tests/unit/connectors/ai/ollama/test_ollama_request_settings.py: 8
+tests/unit/connectors/ai/onnx/services/test_onnx_chat_completion.py: 12
+tests/unit/connectors/ai/onnx/services/test_onnx_text_completion.py: 7
+tests/unit/connectors/ai/onnx/services/test_onnx_utils.py: 8
+tests/unit/connectors/ai/onnx/test_onnx_prompt_execution_settings.py: 7
+tests/unit/connectors/ai/open_ai/services/test_azure_audio_to_text.py: 8
+tests/unit/connectors/ai/open_ai/services/test_azure_chat_completion.py: 26
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py: 7
+tests/unit/connectors/ai/open_ai/services/test_azure_text_embedding.py: 8
+tests/unit/connectors/ai/open_ai/services/test_azure_text_to_audio.py: 7
+tests/unit/connectors/ai/open_ai/services/test_azure_text_to_image.py: 7
+tests/unit/connectors/ai/open_ai/services/test_openai_audio_to_text.py: 8
+tests/unit/connectors/ai/open_ai/services/test_openai_chat_completion.py: 8
+tests/unit/connectors/ai/open_ai/services/test_openai_chat_completion_base.py: 27
+tests/unit/connectors/ai/open_ai/services/test_openai_realtime.py: 49
+tests/unit/connectors/ai/open_ai/services/test_openai_text_completion.py: 16
+tests/unit/connectors/ai/open_ai/services/test_openai_text_embedding.py: 9
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_audio.py: 7
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py: 31
+tests/unit/connectors/ai/open_ai/test_openai_request_settings.py: 31
+tests/unit/connectors/ai/test_completion_token_usage.py: 2
+tests/unit/connectors/ai/test_function_choice_behavior.py: 31
+tests/unit/connectors/ai/test_prompt_execution_settings.py: 2
+tests/unit/connectors/mcp/test_mcp.py: 23
+tests/unit/connectors/memory/azure_cosmos_db/test_azure_cosmos_db_mongodb_collection.py: 5
+tests/unit/connectors/memory/azure_cosmos_db/test_azure_cosmos_db_no_sql_collection.py: 27
+tests/unit/connectors/memory/azure_cosmos_db/test_azure_cosmos_db_no_sql_store.py: 7
+tests/unit/connectors/memory/mongodb_atlas/test_mongodb_atlas_collection.py: 7
+tests/unit/connectors/memory/mongodb_atlas/test_mongodb_atlas_store.py: 3
+tests/unit/connectors/memory/test_azure_ai_search.py: 62
+tests/unit/connectors/memory/test_chroma.py: 13
+tests/unit/connectors/memory/test_faiss.py: 15
+tests/unit/connectors/memory/test_in_memory.py: 43
+tests/unit/connectors/memory/test_oracle.py: 14
+tests/unit/connectors/memory/test_pinecone.py: 17
+tests/unit/connectors/memory/test_postgres_store.py: 20
+tests/unit/connectors/memory/test_qdrant.py: 22
+tests/unit/connectors/memory/test_redis_store.py: 26
+tests/unit/connectors/memory/test_sql_server.py: 42
+tests/unit/connectors/memory/weaviate/test_weaviate_collection.py: 16
+tests/unit/connectors/memory/weaviate/test_weaviate_store.py: 7
+tests/unit/connectors/openapi_plugin/test_openapi_manager.py: 7
+tests/unit/connectors/openapi_plugin/test_openapi_parser.py: 18
+tests/unit/connectors/openapi_plugin/test_openapi_runner.py: 21
+tests/unit/connectors/openapi_plugin/test_rest_api_operation_run_options.py: 2
+tests/unit/connectors/openapi_plugin/test_rest_api_uri.py: 4
+tests/unit/connectors/openapi_plugin/test_server_url_validator.py: 52
+tests/unit/connectors/openapi_plugin/test_sk_openapi.py: 79
+tests/unit/connectors/search/test_brave_search.py: 28
+tests/unit/connectors/search/test_google_search.py: 31
+tests/unit/connectors/utils/test_document_loader.py: 8
+tests/unit/contents/test_annotation_content.py: 22
+tests/unit/contents/test_binary_content.py: 40
+tests/unit/contents/test_chat_history.py: 55
+tests/unit/contents/test_chat_history_reducer_utils.py: 10
+tests/unit/contents/test_chat_history_summarization_reducer.py: 14
+tests/unit/contents/test_chat_history_truncation_reducer.py: 18
+tests/unit/contents/test_chat_message_content.py: 43
+tests/unit/contents/test_data_uri.py: 36
+tests/unit/contents/test_file_reference_content.py: 11
+tests/unit/contents/test_function_call_content.py: 24
+tests/unit/contents/test_function_result_content.py: 24
+tests/unit/contents/test_hashing_utils.py: 8
+tests/unit/contents/test_image_content.py: 13
+tests/unit/contents/test_streaming_annotation_content.py: 22
+tests/unit/contents/test_streaming_chat_message_content.py: 43
+tests/unit/contents/test_streaming_file_reference_content.py: 11
+tests/unit/core_plugins/test_conversation_summary_plugin_unit.py: 2
+tests/unit/core_plugins/test_crew_ai_enterprise.py: 15
+tests/unit/core_plugins/test_http_plugin.py: 65
+tests/unit/core_plugins/test_math_plugin.py: 62
+tests/unit/core_plugins/test_sessions_python_plugin.py: 55
+tests/unit/core_plugins/test_text_plugin.py: 8
+tests/unit/core_plugins/test_time_plugin.py: 22
+tests/unit/core_plugins/test_wait_plugin.py: 23
+tests/unit/data/test_text_search.py: 15
+tests/unit/data/test_vector_search_base.py: 3
+tests/unit/data/test_vector_store_model_decorator.py: 11
+tests/unit/data/test_vector_store_record_collection.py: 37
+tests/unit/data/test_vector_store_record_definition.py: 10
+tests/unit/functions/test_function_result.py: 9
+tests/unit/functions/test_kernel_arguments.py: 28
+tests/unit/functions/test_kernel_function_decorators.py: 31
+tests/unit/functions/test_kernel_function_from_method.py: 36
+tests/unit/functions/test_kernel_function_from_prompt.py: 33
+tests/unit/functions/test_kernel_function_metadata.py: 7
+tests/unit/functions/test_kernel_parameter_metadata.py: 7
+tests/unit/functions/test_kernel_plugins.py: 34
+tests/unit/kernel/test_kernel.py: 82
+tests/unit/kernel/test_kernel_filter_extension.py: 17
+tests/unit/kernel/test_register_functions.py: 3
+tests/unit/processes/kernel_process/test_kernel_process.py: 4
+tests/unit/processes/kernel_process/test_kernel_process_edge.py: 4
+tests/unit/processes/kernel_process/test_kernel_process_event.py: 4
+tests/unit/processes/kernel_process/test_kernel_process_function_target.py: 4
+tests/unit/processes/kernel_process/test_kernel_process_message_channel.py: 2
+tests/unit/processes/kernel_process/test_kernel_process_state.py: 4
+tests/unit/processes/kernel_process/test_kernel_process_state_metadata.py: 5
+tests/unit/processes/kernel_process/test_kernel_process_step_context.py: 3
+tests/unit/processes/kernel_process/test_kernel_process_step_info.py: 3
+tests/unit/processes/kernel_process/test_kernel_process_step_state.py: 4
+tests/unit/processes/local_runtime/test_local_event.py: 3
+tests/unit/processes/local_runtime/test_local_kernel_process.py: 2
+tests/unit/processes/local_runtime/test_local_kernel_process_context.py: 8
+tests/unit/processes/local_runtime/test_local_message.py: 6
+tests/unit/processes/local_runtime/test_local_message_factory.py: 4
+tests/unit/processes/local_runtime/test_local_process.py: 16
+tests/unit/processes/local_runtime/test_local_step.py: 20
+tests/unit/processes/test_process_builder.py: 12
+tests/unit/processes/test_process_edge_builder.py: 6
+tests/unit/processes/test_process_message_factory.py: 1
+tests/unit/processes/test_process_step_builder.py: 12
+tests/unit/processes/test_process_step_edge_builder.py: 8
+tests/unit/processes/test_process_types.py: 7
+tests/unit/processes/test_step_utils.py: 15
+tests/unit/prompt_template/test_handlebars_prompt_template.py: 74
+tests/unit/prompt_template/test_handlebars_prompt_template_e2e.py: 8
+tests/unit/prompt_template/test_jinja2_prompt_template.py: 46
+tests/unit/prompt_template/test_jinja2_prompt_template_e2e.py: 11
+tests/unit/prompt_template/test_kernel_prompt_template.py: 9
+tests/unit/prompt_template/test_prompt_template_e2e.py: 54
+tests/unit/prompt_template/test_prompt_templates.py: 18
+tests/unit/prompt_template/test_template_helper.py: 7
+tests/unit/schema/test_schema_builder.py: 36
+tests/unit/services/test_ai_service_client_base.py: 5
+tests/unit/services/test_ai_service_selector.py: 7
+tests/unit/services/test_service_utils.py: 14
+tests/unit/telemetry/test_user_agent.py: 5
+tests/unit/template_engine/blocks/test_block.py: 3
+tests/unit/template_engine/blocks/test_code_block.py: 279
+tests/unit/template_engine/blocks/test_function_id_block.py: 20
+tests/unit/template_engine/blocks/test_named_arg_block.py: 19
+tests/unit/template_engine/blocks/test_text_block.py: 30
+tests/unit/template_engine/blocks/test_val_block.py: 11
+tests/unit/template_engine/blocks/test_var_block.py: 21
+tests/unit/template_engine/test_code_tokenizer.py: 19
+tests/unit/template_engine/test_template_tokenizer.py: 48
+tests/unit/test_serialization.py: 34
+tests/unit/text/test_function_extension.py: 1
+tests/unit/text/test_text_chunker.py: 28
+tests/unit/utils/agent_diagnostics/test_agent_decorated.py: 4
+tests/unit/utils/agent_diagnostics/test_trace_chat_completion_agent.py: 3
+tests/unit/utils/agent_diagnostics/test_trace_open_ai_assistant_agent.py: 3
+tests/unit/utils/model_diagnostics/test_connector_decorated.py: 20
+tests/unit/utils/model_diagnostics/test_trace_chat_completion.py: 8
+tests/unit/utils/model_diagnostics/test_trace_streaming_chat_completion.py: 8
+tests/unit/utils/model_diagnostics/test_trace_streaming_text_completion.py: 6
+tests/unit/utils/model_diagnostics/test_trace_text_completion.py: 6
+tests/unit/utils/test_chat.py: 1
+tests/unit/utils/test_feature_stage_decorator.py: 8
+tests/unit/utils/test_logging.py: 1
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/flaml/__init__.py:20
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/flaml/__init__.py:20: UserWarning: flaml.automl is not available. Please install flaml[automl] to enable AutoML functionalities.
+    warnings.warn("flaml.automl is not available. Please install flaml[automl] to enable AutoML functionalities.")
+
+.venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2371
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2371: PydanticDeprecatedSince211: The `__get_pydantic_core_schema__` method of the `BaseModel` class is deprecated. If you are calling `super().__get_pydantic_core_schema__` when overriding the method on a Pydantic model, consider using `handler(source)` instead. However, note that overriding this method on models can lead to unexpected side effects. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    schema = annotation_get_schema(source, get_inner_schema)
+
+tests/unit/agents/test_agent.py:333
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/test_agent.py:333: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/unit/agents/test_agent.py)
+    @register_agent_type("test_agent")
+
+.venv/lib/python3.12/site-packages/google/cloud/aiplatform/models.py:52
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/google/cloud/aiplatform/models.py:52: FutureWarning: Support for google-cloud-storage < 3.0.0 will be removed in a future version of google-cloud-aiplatform. Please upgrade to google-cloud-storage >= 3.0.0.
+    from google.cloud.aiplatform.utils import gcs_utils
+
+semantic_kernel/connectors/ai/google/vertex_ai/__init__.py:5
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/google/vertex_ai/__init__.py:5: DeprecationWarning: The semantic_kernel.connectors.ai.google.vertex_ai module is deprecated and will be removed after 01/01/2026. Please use semantic_kernel.connectors.ai.google instead for Google AI services.
+    from semantic_kernel.connectors.ai.google.vertex_ai.services.vertex_ai_chat_completion import VertexAIChatCompletion
+
+<frozen abc>:106
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: VertexAIPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+
+<frozen abc>:106
+<frozen abc>:106
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: VertexAIBase is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:10
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:10: DeprecationWarning: The `semantic_kernel.connectors.ai.google.vertex_ai` package is deprecated and will be removed after 01/01/2026. Please use `semantic_kernel.connectors.ai.google` instead for Google AI services.
+    from semantic_kernel.connectors.ai.google.vertex_ai.services.vertex_ai_chat_completion import VertexAIChatCompletion
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+.venv/lib/python3.12/site-packages/openapi_core/spec/paths.py:9
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/openapi_core/spec/paths.py:9: DeprecationWarning: Spec is deprecated. Use SchemaPath from jsonschema-path package.
+    warnings.warn(
+
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: This class will be removed in a future version.
+
+tests/unit/processes/test_process_step_builder.py:18
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/processes/test_process_step_builder.py:18: PytestCollectionWarning: cannot collect test class 'TestFunctionEnum' because it has a __init__ constructor (from: tests/unit/processes/test_process_step_builder.py)
+    class TestFunctionEnum(Enum):
+
+semantic_kernel/memory/null_memory.py:60
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/memory/null_memory.py:60: DeprecationWarning: This class will be removed in a future version.
+    NullMemory.instance = NullMemory()  # type: ignore
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html

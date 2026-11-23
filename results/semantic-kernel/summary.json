@@ -1,0 +1,9 @@
+{
+  "suite_runs": 20,
+  "isolation_reps": 10,
+  "comparison": {
+    "consistent_always_pass": 4114,
+    "consistent_always_skipped": 6
+  },
+  "tests": 4120
+}

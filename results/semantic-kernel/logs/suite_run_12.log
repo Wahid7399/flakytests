@@ -1,0 +1,691 @@
+........................................................................ [  1%]
+........................................................................ [  3%]
+........................................................................ [  5%]
+........................................................................ [  6%]
+........................................................................ [  8%]
+......................................s................................. [ 10%]
+........................................................................ [ 12%]
+........................................................................ [ 13%]
+........................................................................ [ 15%]
+........................................................................ [ 17%]
+........................................................................ [ 19%]
+........................................................................ [ 20%]
+........................................................................ [ 22%]
+........................................................................ [ 24%]
+........................................................................ [ 26%]
+........................................................................ [ 27%]
+........................................................................ [ 29%]
+........................................................................ [ 31%]
+........................................................................ [ 33%]
+..........................................x....x..xx.................... [ 34%]
+........................................................................ [ 36%]
+........................................................................ [ 38%]
+........................................................................ [ 40%]
+........................................................................ [ 41%]
+........................................................................ [ 43%]
+........................................................................ [ 45%]
+........................................................................ [ 47%]
+........................................................................ [ 48%]
+........................................................................ [ 50%]
+........................................................................ [ 52%]
+........................................................................ [ 54%]
+........................................................................ [ 55%]
+........................................................................ [ 57%]
+........................................................................ [ 59%]
+........................................................................ [ 61%]
+........................................................................ [ 62%]
+........................................................................ [ 64%]
+........................................................................ [ 66%]
+........................................................................ [ 68%]
+........................................................................ [ 69%]
+........................................................................ [ 71%]
+........................................................................ [ 73%]
+........................................................................ [ 75%]
+........................................................................ [ 76%]
+........................................................................ [ 78%]
+........................................................................ [ 80%]
+........................................................................ [ 82%]
+........................................................................ [ 83%]
+........................................................................ [ 85%]
+........................................................................ [ 87%]
+........................................................................ [ 89%]
+........................................................................ [ 90%]
+........................................................................ [ 92%]
+........................................................................ [ 94%]
+........................................................................ [ 96%]
+..............................................................x......... [ 97%]
+........................................................................ [ 99%]
+................                                                         [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/flaml/__init__.py:20
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/flaml/__init__.py:20: UserWarning: flaml.automl is not available. Please install flaml[automl] to enable AutoML functionalities.
+    warnings.warn("flaml.automl is not available. Please install flaml[automl] to enable AutoML functionalities.")
+
+.venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2371
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2371: PydanticDeprecatedSince211: The `__get_pydantic_core_schema__` method of the `BaseModel` class is deprecated. If you are calling `super().__get_pydantic_core_schema__` when overriding the method on a Pydantic model, consider using `handler(source)` instead. However, note that overriding this method on models can lead to unexpected side effects. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    schema = annotation_get_schema(source, get_inner_schema)
+
+tests/unit/agents/test_agent.py:333
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/test_agent.py:333: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/unit/agents/test_agent.py)
+    @register_agent_type("test_agent")
+
+.venv/lib/python3.12/site-packages/google/cloud/aiplatform/models.py:52
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/google/cloud/aiplatform/models.py:52: FutureWarning: Support for google-cloud-storage < 3.0.0 will be removed in a future version of google-cloud-aiplatform. Please upgrade to google-cloud-storage >= 3.0.0.
+    from google.cloud.aiplatform.utils import gcs_utils
+
+semantic_kernel/connectors/ai/google/vertex_ai/__init__.py:5
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/google/vertex_ai/__init__.py:5: DeprecationWarning: The semantic_kernel.connectors.ai.google.vertex_ai module is deprecated and will be removed after 01/01/2026. Please use semantic_kernel.connectors.ai.google instead for Google AI services.
+    from semantic_kernel.connectors.ai.google.vertex_ai.services.vertex_ai_chat_completion import VertexAIChatCompletion
+
+<frozen abc>:106
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: VertexAIPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+
+<frozen abc>:106
+<frozen abc>:106
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: VertexAIBase is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:10
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:10: DeprecationWarning: The `semantic_kernel.connectors.ai.google.vertex_ai` package is deprecated and will be removed after 01/01/2026. Please use `semantic_kernel.connectors.ai.google` instead for Google AI services.
+    from semantic_kernel.connectors.ai.google.vertex_ai.services.vertex_ai_chat_completion import VertexAIChatCompletion
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+.venv/lib/python3.12/site-packages/openapi_core/spec/paths.py:9: 1 warning
+tests/unit/connectors/openapi_plugin/test_openapi_manager.py: 1 warning
+tests/unit/connectors/openapi_plugin/test_openapi_parser.py: 7 warnings
+tests/unit/connectors/openapi_plugin/test_openapi_runner.py: 21 warnings
+tests/unit/connectors/openapi_plugin/test_sk_openapi.py: 3 warnings
+tests/unit/functions/test_kernel_plugins.py: 2 warnings
+tests/unit/kernel/test_kernel.py: 1 warning
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/openapi_core/spec/paths.py:9: DeprecationWarning: Spec is deprecated. Use SchemaPath from jsonschema-path package.
+    warnings.warn(
+
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: This class will be removed in a future version.
+
+tests/unit/processes/test_process_step_builder.py:18
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/processes/test_process_step_builder.py:18: PytestCollectionWarning: cannot collect test class 'TestFunctionEnum' because it has a __init__ constructor (from: tests/unit/processes/test_process_step_builder.py)
+    class TestFunctionEnum(Enum):
+
+semantic_kernel/memory/null_memory.py:60
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/memory/null_memory.py:60: DeprecationWarning: This class will be removed in a future version.
+    NullMemory.instance = NullMemory()  # type: ignore
+
+tests/unit/agents/chat_completion/test_chat_history_channel.py: 5 warnings
+tests/unit/contents/test_chat_history_reducer_utils.py: 40 warnings
+tests/unit/contents/test_chat_message_content.py: 6 warnings
+tests/unit/contents/test_function_result_content.py: 3 warnings
+tests/unit/contents/test_hashing_utils.py: 6 warnings
+tests/unit/contents/test_streaming_chat_message_content.py: 6 warnings
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/contents/utils/hashing.py:30: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    for field_name in input.model_fields:
+
+tests/unit/agents/openai_assistant/test_azure_assistant_agent.py::test_azure_open_ai_settings_create_throws
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_azure_assistant_agent.py:152: DeprecationWarning: setup_resources is deprecated. Use AzureAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = AzureAssistantAgent.setup_resources(api_key="test_api_key")
+
+tests/unit/agents/openai_assistant/test_azure_assistant_agent.py::test_create_openai_client
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_azure_assistant_agent.py:318: DeprecationWarning: setup_resources is deprecated. Use AzureAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    client, model = AzureAssistantAgent.setup_resources(api_key="test_api_key", default_headers={"user_agent": "test"})
+
+tests/unit/agents/openai_assistant/test_azure_assistant_agent.py::test_create_azure_openai_client
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_azure_assistant_agent.py:325: DeprecationWarning: setup_resources is deprecated. Use AzureAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    client, model = AzureAssistantAgent.setup_resources(
+
+tests/unit/agents/openai_assistant/test_azure_assistant_agent.py::test_retrieve_agent_missing_endpoint_throws[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_azure_assistant_agent.py:337: DeprecationWarning: setup_resources is deprecated. Use AzureAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = AzureAssistantAgent.setup_resources(
+
+tests/unit/agents/openai_assistant/test_azure_assistant_agent.py::test_retrieve_agent_missing_chat_deployment_name_throws[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_azure_assistant_agent.py:345: DeprecationWarning: setup_resources is deprecated. Use AzureAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = AzureAssistantAgent.setup_resources(
+
+tests/unit/agents/openai_assistant/test_openai_assistant_agent.py::test_open_ai_settings_create_throws
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_openai_assistant_agent.py:95: DeprecationWarning: setup_resources is deprecated. Use OpenAIAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = OpenAIAssistantAgent.setup_resources(api_key="test_api_key")
+
+tests/unit/agents/openai_assistant/test_openai_assistant_agent.py::test_create_openai_client
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_openai_assistant_agent.py:367: DeprecationWarning: setup_resources is deprecated. Use OpenAIAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    client, model = OpenAIAssistantAgent.setup_resources(env_file_path="./", default_headers={"user_agent": "test"})
+
+tests/unit/agents/openai_assistant/test_openai_assistant_agent.py::test_open_ai_agent_missing_api_key_throws[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_openai_assistant_agent.py:376: DeprecationWarning: setup_resources is deprecated. Use OpenAIAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = OpenAIAssistantAgent.setup_resources(env_file_path="./", default_headers={"user_agent": "test"})
+
+tests/unit/agents/openai_assistant/test_openai_assistant_agent.py::test_open_ai_agent_missing_chat_deployment_name_throws[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_assistant/test_openai_assistant_agent.py:382: DeprecationWarning: setup_resources is deprecated. Use OpenAIAssistantAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = OpenAIAssistantAgent.setup_resources(
+
+tests/unit/agents/openai_responses/test_openai_responses_agent.py::test_open_ai_settings_create_throws
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_responses/test_openai_responses_agent.py:75: DeprecationWarning: setup_resources is deprecated. Use OpenAIResponsesAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = OpenAIResponsesAgent.setup_resources(api_key="test_api_key")
+
+tests/unit/agents/openai_responses/test_openai_responses_agent.py::test_create_openai_client
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_responses/test_openai_responses_agent.py:236: DeprecationWarning: setup_resources is deprecated. Use OpenAIResponsesAgent.create_client() instead. This method will be removed by 2025-06-15.
+    client, model = OpenAIResponsesAgent.setup_resources(env_file_path="./", default_headers={"user_agent": "test"})
+
+tests/unit/agents/openai_responses/test_openai_responses_agent.py::test_open_ai_agent_missing_api_key_throws[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_responses/test_openai_responses_agent.py:245: DeprecationWarning: setup_resources is deprecated. Use OpenAIResponsesAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = OpenAIResponsesAgent.setup_resources(env_file_path="./", default_headers={"user_agent": "test"})
+
+tests/unit/agents/openai_responses/test_openai_responses_agent.py::test_open_ai_agent_missing_chat_deployment_name_throws[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/openai_responses/test_openai_responses_agent.py:251: DeprecationWarning: setup_resources is deprecated. Use OpenAIResponsesAgent.create_client() instead. This method will be removed by 2025-06-15.
+    _, _ = OpenAIResponsesAgent.setup_resources(
+
+tests/unit/connectors/ai/azure_ai_inference/services/test_azure_ai_inference_chat_completion.py::test_azure_ai_inference_chat_completion_init_with_empty_endpoint[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/_pytest/unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored in: <function AzureAIInferenceBase.__del__ at 0x7d0776fbfec0>
+  
+  Traceback (most recent call last):
+    File "/workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/azure_ai_inference/services/azure_ai_inference_base.py", line 126, in __del__
+      if self.managed_client:
+         ^^^^^^^^^^^^^^^^^^^
+    File "/workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/main.py", line 991, in __getattr__
+      raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+  AttributeError: 'AzureAIInferenceChatCompletion' object has no attribute 'managed_client'
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+tests/unit/connectors/ai/azure_ai_inference/services/test_azure_ai_inference_text_embedding.py::test_azure_ai_inference_text_embedding_init_with_empty_endpoint[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/_pytest/unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored in: <function AzureAIInferenceBase.__del__ at 0x7d0776fbfec0>
+  
+  Traceback (most recent call last):
+    File "/workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/azure_ai_inference/services/azure_ai_inference_base.py", line 126, in __del__
+      if self.managed_client:
+         ^^^^^^^^^^^^^^^^^^^
+    File "/workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/main.py", line 991, in __getattr__
+      raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+  AttributeError: 'AzureAIInferenceTextEmbedding' object has no attribute 'managed_client'
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_init
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:30: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py: 19 warnings
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/google/vertex_ai/services/vertex_ai_chat_completion.py:95: DeprecationWarning: VertexAISettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    vertex_ai_settings = VertexAISettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_init_with_service_id
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:42: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion(service_id=service_id)
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_init_with_model_id_in_argument
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:49: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion(gemini_model_id="custom_model_id")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_init_with_empty_model_id[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:59: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    VertexAIChatCompletion(env_file_path="fake_env_file_path.env")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_init_with_empty_project_id[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:66: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    VertexAIChatCompletion(env_file_path="fake_env_file_path.env")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_prompt_execution_settings_class
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:70: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:88: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:92: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior_fail_verification
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior_no_tool_call
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior_fail_verification
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior_no_tool_call
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/main.py:939: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    m = cls.__new__(cls)
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior_no_tool_call
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior_no_tool_call
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_streaming_text_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/vertexai/generative_models/_generative_models.py:433: UserWarning: This feature is deprecated as of June 24, 2025 and will be removed on June 24, 2026. For details, see https://cloud.google.com/vertex-ai/generative-ai/docs/deprecations/genai-vertexai-sdk.
+    warning_logs.show_deprecation_warning()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py: 10 warnings
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_utils.py: 5 warnings
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/proto/message.py:392: DeprecationWarning: The argument `including_default_value_fields` has been removed from
+                  Protobuf 5.x. Please use `always_print_fields_with_no_presence` instead.
+                  
+    warnings.warn(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior_fail_verification
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:131: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior_fail_verification
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:135: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:154: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:159: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior_no_tool_call
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:188: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_with_function_choice_behavior_no_tool_call
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:193: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:237: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:241: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior_fail_verification
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:278: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior_fail_verification
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:282: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:305: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:310: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior_no_tool_call
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:348: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_streaming_chat_completion_with_function_choice_behavior_no_tool_call
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:353: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_vertex_ai_chat_completion_parse_chat_history_correctly
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:388: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    vertex_ai_chat_completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_create_chat_message_content_with_thought_signature
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:439: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_create_chat_message_content_without_thought_signature
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:471: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_create_streaming_chat_message_content_with_thought_signature
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:505: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py::test_create_streaming_chat_message_content_without_thought_signature
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:537: DeprecationWarning: VertexAIChatCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAIChatCompletion` connectors instead.
+    completion = VertexAIChatCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:23: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    vertex_ai_text_completion = VertexAITextCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_service_id
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_model_id_in_argument
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_empty_model_id[exclude_list0]
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_empty_project_id[exclude_list0]
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_prompt_execution_settings_class
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_streaming_text_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/google/vertex_ai/services/vertex_ai_text_completion.py:67: DeprecationWarning: VertexAISettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    vertex_ai_settings = VertexAISettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_service_id
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:35: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    vertex_ai_text_completion = VertexAITextCompletion(service_id=service_id)
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_model_id_in_argument
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:42: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    vertex_ai_text_completion = VertexAITextCompletion(gemini_model_id="custom_model_id")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_empty_model_id[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:52: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    VertexAITextCompletion(env_file_path="fake_env_file_path.env")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion_init_with_empty_project_id[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:59: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    VertexAITextCompletion(env_file_path="fake_env_file_path.env")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_prompt_execution_settings_class
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:63: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    vertex_ai_text_completion = VertexAITextCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:81: DeprecationWarning: VertexAITextPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAITextPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:85: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    vertex_ai_text_completion = VertexAITextCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_text_completion
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_streaming_text_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/main.py:939: DeprecationWarning: VertexAITextPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    m = cls.__new__(cls)
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_streaming_text_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:113: DeprecationWarning: VertexAITextPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAITextPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py::test_vertex_ai_streaming_text_completion
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_completion.py:117: DeprecationWarning: VertexAITextCompletion is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextCompletion` connectors instead.
+    vertex_ai_text_completion = VertexAITextCompletion()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_vertex_ai_text_embedding_init
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:24: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py: 11 warnings
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/google/vertex_ai/services/vertex_ai_text_embedding.py:60: DeprecationWarning: VertexAISettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    vertex_ai_settings = VertexAISettings(
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_vertex_ai_text_embedding_init_with_service_id
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:36: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding(service_id=service_id)
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_vertex_ai_text_embedding_init_with_model_id_in_argument
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:43: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_chat_completion = VertexAITextEmbedding(embedding_model_id="custom_model_id")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_vertex_ai_text_embedding_init_with_empty_model_id[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:53: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    VertexAITextEmbedding(env_file_path="fake_env_file_path.env")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_vertex_ai_text_embedding_init_with_empty_project_id[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:60: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    VertexAITextEmbedding(env_file_path="fake_env_file_path.env")
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_prompt_execution_settings_class
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:64: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:78: DeprecationWarning: VertexAIEmbeddingPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIEmbeddingPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:80: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding_with_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:98: DeprecationWarning: VertexAIEmbeddingPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIEmbeddingPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding_with_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:102: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding_without_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:123: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding_without_settings
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding_list_input
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/google/vertex_ai/services/vertex_ai_text_embedding.py:96: DeprecationWarning: VertexAIEmbeddingPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIEmbeddingPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_embedding_list_input
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:138: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_raw_embedding
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:153: DeprecationWarning: VertexAIEmbeddingPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIEmbeddingPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py::test_raw_embedding
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_text_embedding.py:155: DeprecationWarning: VertexAITextEmbedding is deprecated and will be removed after 01/01/2026. Use `semantic_kernel.connectors.ai.google.GoogleAITextEmbedding` connectors instead.
+    vertex_ai_text_embedding = VertexAITextEmbedding()
+
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_default_vertex_ai_prompt_execution_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py:14: DeprecationWarning: VertexAIPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIPromptExecutionSettings()
+
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_custom_vertex_ai_prompt_execution_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py:27: DeprecationWarning: VertexAIPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_vertex_ai_prompt_execution_settings_from_default_completion_config
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_vertex_ai_prompt_execution_settings_from_custom_completion_config
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_vertex_ai_chat_prompt_execution_settings_from_custom_completion_config_with_functions
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/prompt_execution_settings.py:101: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    return cls(
+
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_vertex_ai_prompt_execution_settings_from_openai_prompt_execution_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py:62: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    chat_settings = VertexAIChatPromptExecutionSettings(service_id="test_service", temperature=1.0)
+
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_vertex_ai_prompt_execution_settings_from_openai_prompt_execution_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py:63: DeprecationWarning: VertexAIPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    new_settings = VertexAIPromptExecutionSettings(service_id="test_2", temperature=0.0)
+
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_create_options
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py:107: DeprecationWarning: VertexAIChatPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIChatPromptExecutionSettings(
+
+tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py::test_default_vertex_ai_embedding_prompt_execution_settings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/test_vertex_ai_request_settings.py:133: DeprecationWarning: VertexAIEmbeddingPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+    settings = VertexAIEmbeddingPromptExecutionSettings()
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py::test_init
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py:26: DeprecationWarning: The AzureTextCompletion class is deprecated and will be removed after 01/01/2026. There won't be a replacement because all text completion models on Azure OpenAI have retired. Please migrate to chat completion models before the deprecation date.
+    azure_text_completion = AzureTextCompletion()
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py::test_init_with_custom_header
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py:39: DeprecationWarning: The AzureTextCompletion class is deprecated and will be removed after 01/01/2026. There won't be a replacement because all text completion models on Azure OpenAI have retired. Please migrate to chat completion models before the deprecation date.
+    azure_text_completion = AzureTextCompletion(
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py::test_azure_text_embedding_generates_no_token_with_api_key_in_env
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py:58: DeprecationWarning: The AzureTextCompletion class is deprecated and will be removed after 01/01/2026. There won't be a replacement because all text completion models on Azure OpenAI have retired. Please migrate to chat completion models before the deprecation date.
+    azure_text_completion = AzureTextCompletion()
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py::test_init_with_empty_deployment_name[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py:69: DeprecationWarning: The AzureTextCompletion class is deprecated and will be removed after 01/01/2026. There won't be a replacement because all text completion models on Azure OpenAI have retired. Please migrate to chat completion models before the deprecation date.
+    AzureTextCompletion(
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py::test_init_with_empty_endpoint_and_base_url[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py:77: DeprecationWarning: The AzureTextCompletion class is deprecated and will be removed after 01/01/2026. There won't be a replacement because all text completion models on Azure OpenAI have retired. Please migrate to chat completion models before the deprecation date.
+    AzureTextCompletion(
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py::test_init_with_invalid_endpoint[override_env_param_dict0]
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py:85: DeprecationWarning: The AzureTextCompletion class is deprecated and will be removed after 01/01/2026. There won't be a replacement because all text completion models on Azure OpenAI have retired. Please migrate to chat completion models before the deprecation date.
+    AzureTextCompletion()
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_completion.py::test_serialize[exclude_list0]
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/open_ai/services/azure_text_completion.py:116: DeprecationWarning: The AzureTextCompletion class is deprecated and will be removed after 01/01/2026. There won't be a replacement because all text completion models on Azure OpenAI have retired. Please migrate to chat completion models before the deprecation date.
+    return AzureTextCompletion(
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_to_image.py::test_azure_text_to_image_calls_with_parameters
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_azure_text_to_image.py:92: DeprecationWarning: generate_image is deprecated. Use generate_images.
+    await azure_text_to_image.generate_image(prompt, width=width, height=width)
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_to_image.py::test_azure_text_to_image_calls_with_parameters
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_fail
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_invalid_image_size
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_empty_description
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_no_result
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/open_ai/services/open_ai_text_to_image_base.py:49: DeprecationWarning: The 'width' argument is deprecated. Use 'settings.size' instead.
+    warn("The 'width' argument is deprecated. Use 'settings.size' instead.", DeprecationWarning)
+
+tests/unit/connectors/ai/open_ai/services/test_azure_text_to_image.py::test_azure_text_to_image_calls_with_parameters
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_fail
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_invalid_image_size
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_empty_description
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_no_result
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/open_ai/services/open_ai_text_to_image_base.py:53: DeprecationWarning: The 'height' argument is deprecated. Use 'settings.size' instead.
+    warn("The 'height' argument is deprecated. Use 'settings.size' instead.", DeprecationWarning)
+
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_fail
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py:113: DeprecationWarning: generate_image is deprecated. Use generate_images.
+    await openai_text_to_image.generate_image(description="painting of flowers in vase", width=width, height=width)
+
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_invalid_image_size
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py:123: DeprecationWarning: generate_image is deprecated. Use generate_images.
+    await openai_text_to_image.generate_image(description="painting of flowers in vase", width=width, height=width)
+
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_empty_description
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py:133: DeprecationWarning: generate_image is deprecated. Use generate_images.
+    await openai_text_to_image.generate_image(description="", width=width, height=width)
+
+tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py::test_generate_no_result
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/open_ai/services/test_openai_text_to_image.py:145: DeprecationWarning: generate_image is deprecated. Use generate_images.
+    await openai_text_to_image.generate_image(description="painting of flowers in vase", width=width, height=width)
+
+tests/unit/connectors/memory/weaviate/test_weaviate_collection.py::test_weaviate_collection_init_with_invalid_settings_more_than_one_backends
+tests/unit/connectors/memory/weaviate/test_weaviate_store.py::test_weaviate_store_init_with_invalid_settings_more_than_one_backends
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/memory/weaviate/conftest.py:55: PytestWarning: Value of environment variable WEAVIATE_LOCAL_PORT type should be str, but got 8080 (type: int); converted to str implicitly
+    monkeypatch.setenv(key, value)
+
+tests/unit/connectors/memory/weaviate/test_weaviate_collection.py::test_weaviate_collection_init_with_invalid_settings_more_than_one_backends
+tests/unit/connectors/memory/weaviate/test_weaviate_store.py::test_weaviate_store_init_with_invalid_settings_more_than_one_backends
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/memory/weaviate/conftest.py:55: PytestWarning: Value of environment variable WEAVIATE_LOCAL_GRPC_PORT type should be str, but got 8081 (type: int); converted to str implicitly
+    monkeypatch.setenv(key, value)
+
+tests/unit/connectors/memory/weaviate/test_weaviate_collection.py::test_weaviate_collection_init_with_invalid_settings_more_than_one_backends
+tests/unit/connectors/memory/weaviate/test_weaviate_store.py::test_weaviate_store_init_with_invalid_settings_more_than_one_backends
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/memory/weaviate/conftest.py:55: PytestWarning: Value of environment variable WEAVIATE_USE_EMBED type should be str, but got True (type: bool); converted to str implicitly
+    monkeypatch.setenv(key, value)
+
+tests/unit/connectors/search/test_brave_search.py::test_search_no_filter
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/brave.py:231: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    response.raise_for_status()
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/unit/connectors/utils/test_document_loader.py::test_from_uri_success[None-semantic-kernel-python]
+tests/unit/connectors/utils/test_document_loader.py::test_from_uri_success[semantic-kernel-python-semantic-kernel-python]
+tests/unit/connectors/utils/test_document_loader.py::test_from_uri_success[Custom-Agent-Custom-Agent]
+tests/unit/connectors/utils/test_document_loader.py::test_from_uri_default_user_agent
+tests/unit/connectors/utils/test_document_loader.py::test_from_uri_with_auth_callback
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/utils/document_loader.py:40: RuntimeWarning: coroutine 'AsyncMockMixin._execute_mock_call' was never awaited
+    response.raise_for_status()
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+
+tests/unit/contents/test_function_call_content.py::test_split_name
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/contents/test_function_call_content.py:172: DeprecationWarning: The function_name and plugin_name properties should be used instead.
+    assert function_call.split_name() == ["Test", "Function"]
+
+tests/unit/contents/test_function_call_content.py::test_split_name_name_only
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/contents/test_function_call_content.py:178: DeprecationWarning: The function_name and plugin_name properties should be used instead.
+    assert fc.split_name() == ["", "Function"]
+
+tests/unit/contents/test_function_call_content.py::test_split_name_dict
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/contents/test_function_call_content.py:183: DeprecationWarning: The function_name and plugin_name properties should be used instead.
+    assert function_call.split_name_dict() == {"plugin_name": "Test", "function_name": "Function"}
+
+tests/unit/contents/test_function_call_content.py::test_split_name_none
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/contents/test_function_call_content.py:189: DeprecationWarning: The function_name and plugin_name properties should be used instead.
+    fc.split_name()
+
+tests/unit/contents/test_function_result_content.py::test_init
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/contents/test_function_result_content.py:58: DeprecationWarning: The function_name and plugin_name attributes should be used instead.
+    assert frc.split_name() == ["test", "function"]
+
+tests/unit/core_plugins/test_http_plugin.py: 3 warnings
+tests/unit/core_plugins/test_sessions_python_plugin.py: 3 warnings
+tests/unit/core_plugins/test_text_plugin.py: 6 warnings
+tests/unit/core_plugins/test_time_plugin.py: 3 warnings
+tests/unit/processes/test_process_builder.py: 9 warnings
+tests/unit/processes/test_process_step_builder.py: 6 warnings
+tests/unit/services/test_service_utils.py: 42 warnings
+  /usr/lib/python3.12/inspect.py:585: PydanticDeprecatedSince20: The `__fields__` attribute is deprecated, use `model_fields` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    value = getter(object, key)
+
+tests/unit/core_plugins/test_http_plugin.py: 3 warnings
+tests/unit/core_plugins/test_sessions_python_plugin.py: 3 warnings
+tests/unit/core_plugins/test_text_plugin.py: 6 warnings
+tests/unit/core_plugins/test_time_plugin.py: 3 warnings
+tests/unit/processes/test_process_builder.py: 9 warnings
+tests/unit/processes/test_process_step_builder.py: 6 warnings
+tests/unit/services/test_service_utils.py: 42 warnings
+  /usr/lib/python3.12/inspect.py:585: PydanticDeprecatedSince20: The `__fields_set__` attribute is deprecated, use `model_fields_set` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    value = getter(object, key)
+
+tests/unit/core_plugins/test_http_plugin.py: 3 warnings
+tests/unit/core_plugins/test_sessions_python_plugin.py: 3 warnings
+tests/unit/core_plugins/test_text_plugin.py: 6 warnings
+tests/unit/core_plugins/test_time_plugin.py: 3 warnings
+tests/unit/processes/test_process_builder.py: 9 warnings
+tests/unit/processes/test_process_step_builder.py: 6 warnings
+tests/unit/services/test_service_utils.py: 42 warnings
+  /usr/lib/python3.12/inspect.py:585: PydanticDeprecatedSince211: Accessing the 'model_computed_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    value = getter(object, key)
+
+tests/unit/core_plugins/test_http_plugin.py: 3 warnings
+tests/unit/core_plugins/test_sessions_python_plugin.py: 3 warnings
+tests/unit/core_plugins/test_text_plugin.py: 6 warnings
+tests/unit/core_plugins/test_time_plugin.py: 3 warnings
+tests/unit/processes/test_process_builder.py: 9 warnings
+tests/unit/processes/test_process_step_builder.py: 6 warnings
+tests/unit/services/test_service_utils.py: 42 warnings
+  /usr/lib/python3.12/inspect.py:585: PydanticDeprecatedSince211: Accessing the 'model_fields' attribute on the instance is deprecated. Instead, you should access this attribute from the model class. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    value = getter(object, key)
+
+tests/unit/kernel/test_kernel.py::test_init
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/kernel/test_kernel.py:54: DeprecationWarning: retry_mechanism is deprecated; This property doesn't have any effect on the kernel.
+    assert kernel.retry_mechanism is not None
+
+tests/unit/kernel/test_kernel.py::test_kernel_deep_copy_fail_with_services
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/_pytest/unraisableexception.py:67: PytestUnraisableExceptionWarning: Exception ignored in: <function AsyncHttpxClientWrapper.__del__ at 0x7d07acd328e0>
+  
+  Traceback (most recent call last):
+    File "/workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/openai/_base_client.py", line 1430, in __del__
+      if self.is_closed:
+         ^^^^^^^^^^^^^^
+    File "/workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/httpx/_client.py", line 228, in is_closed
+      return self._state == ClientState.CLOSED
+             ^^^^^^^^^^^
+  AttributeError: 'AsyncHttpxClientWrapper' object has no attribute '_state'
+  
+  Enable tracemalloc to get traceback where the object was allocated.
+  See https://docs.pytest.org/en/stable/how-to/capture-warnings.html#resource-warnings for more info.
+    warnings.warn(pytest.PytestUnraisableExceptionWarning(msg))
+
+tests/unit/test_serialization.py: 12 warnings
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/test_serialization.py:104: DeprecationWarning: This class will be removed in a future version.
+    NullMemory: NullMemory(),
+
+tests/unit/test_serialization.py::TestUsageInPydanticFields::test_usage_as_required_field[NullMemory]
+tests/unit/test_serialization.py::TestUsageInPydanticFields::test_usage_as_required_field[NullMemory]
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/main.py:746: DeprecationWarning: This class will be removed in a future version.
+    return cls.__pydantic_validator__.validate_json(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
