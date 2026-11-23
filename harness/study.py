@@ -12,6 +12,7 @@ import csv
 import glob
 import json
 import os
+import signal
 import subprocess
 import sys
 import time
@@ -47,6 +48,9 @@ def env():
     e = dict(os.environ)
     e["PYTHONPATH"] = str(HARNESS) + os.pathsep + e.get("PYTHONPATH", "")
     e["PYTHONHASHSEED"] = e.get("PYTHONHASHSEED", "0")
+    # The sandbox injects GIT_CONFIG_*=safe.bareRepository=explicit, which breaks tests that use bare repos.
+    if e.get("GIT_CONFIG_KEY_0") == "safe.bareRepository":
+        e["GIT_CONFIG_VALUE_0"] = "all"
     return e
 
 
@@ -140,6 +144,8 @@ def main():
         if name == "aggregate":
             s.add_argument("--pad-to", type=int, default=0)
     a = ap.parse_args()
+    # Background launches ignore SIGINT, which is inherited by pytest and breaks tests that send SIGINT.
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
     sys.path.insert(0, str(HARNESS))
     globals()["cmd_" + a.cmd](a)
 

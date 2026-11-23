@@ -56,13 +56,13 @@ Executed (see `results/*/summary.json`, `suite_runs.jsonl`, `results/campaign*.l
 |---|---|---|
 | flaky in both settings | 0 | 0 |
 | flaky only in isolation | 0 | 0 |
-| flaky only in full suite | 3 (harness artifact, see below) | 0 |
-| consistently pass | 11,823 | 4,114 |
+| flaky only in full suite | 0 | 0 |
+| consistently pass | 11,827 | 4,114 |
 | consistently skipped | 35 (+1 skipped in isolation but passing in suite) | 6 |
-| consistently fail (both settings) | 3 (environmental) | 0 |
+| consistently fail (both settings) | 2 (environmental) | 0 |
 
-**Consistent failures (environmental, not flaky):** `test_runner_preserves_unix_local_lifecycle_state_across_pause_and_resume`, `test_regular_write_preserves_inode_permissions_and_umask` and `test_docs_publish_static_artifact_to_existing_branch` fail every time in this Codespace (e.g. git `safe.bareRepository is 'explicit'`). Tracebacks: `raw/suite_run_*.failures.log`, `isolation_failure_details.jsonl`.
+**Consistent failures (environmental, not flaky):** `test_runner_preserves_unix_local_lifecycle_state_across_pause_and_resume` (the `rclone` mount tool is not installed) and `test_regular_write_preserves_inode_permissions_and_umask` (file mode/umask expectation does not hold in this Codespace). Tracebacks: `raw/suite_run_*.failures.log`, `isolation_failure_details.jsonl`.
 
-**The 3 "flaky only in suite" tests are a harness artifact, not genuine flakiness** (`tests/test_code_change_verification_runner.py::test_cancellation_before_wait_stops_the_active_step[2]`, `::test_cancellation_reaps_owned_processes[2-format]`, `[2-tests]`). Suite run 1 was started from a foreground shell and passed; suite runs 2–5 and all isolation repetitions were started from a background shell in which SIGINT is ignored, so these tests (which send SIGINT to a child process) time out. Verified afterwards: they pass in a foreground shell and fail when SIGINT is ignored (`trap '' INT`). By the literal definition (≥1 pass and ≥1 fail in the same configuration) they are classified flaky in the suite, but the cause is the launch environment; their isolation results (always fail) are affected by the same cause. A clean rerun should start the campaign from a shell that does not ignore SIGINT.
+**Re-run note.** The first openai-agents campaign was started from a background shell that ignored SIGINT and inherited an injected `GIT_CONFIG_*` setting `safe.bareRepository=explicit`. That made 4 tests fail for environmental reasons (`test_docs_publish_static_artifact_to_existing_branch` and three `[2]` cancellation tests in `test_code_change_verification_runner.py`). `harness/study.py` now resets SIGINT and overrides that git setting, and all openai-agents suite runs and the isolation runs of those 4 tests were re-run. The first-attempt data is not used in any result above (kept locally in `results/archive_first_attempt_oa/`, not part of the delivered archive).
 
-**Interpretation:** with 5–20 repetitions only frequent flakiness would be detected. No genuine flaky test was observed, which is not evidence that none exist at the 5,000-run scale. The campaign process was killed and resumed several times (all steps resume from existing files); suite runs 3–5 of openai-agents were re-run after such kills, and `results/campaign_part*.log` contain the partial attempts.
+**Interpretation:** with 5–20 repetitions only frequent flakiness would be detected. No flaky test was observed, which is not evidence that none exist at the 5,000-run scale. The campaign process was killed and resumed several times (all steps resume from existing files); `results/campaign*.log` contain the partial attempts.

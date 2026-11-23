@@ -1,0 +1,231 @@
+=== tests/sandbox/integration_tests/test_runner_pause_resume.py::test_runner_preserves_unix_local_lifecycle_state_across_pause_and_resume (run 2) ===
+--- call ---
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x76c2cfd36b10>
+tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-1690/test_runner_preserves_unix_loc0')
+
+    @pytest.mark.asyncio
+    @pytest.mark.review_optional
+    @pytest.mark.requires_native_macos_sandbox
+    async def test_runner_preserves_unix_local_lifecycle_state_across_pause_and_resume(
+        monkeypatch: pytest.MonkeyPatch,
+        tmp_path: Path,
+    ) -> None:
+        source_root = create_local_sources(tmp_path)
+        mock_tools = install_mock_external_tools(
+            monkeypatch,
+            tmp_path,
+            writable_root=source_root,
+        )
+        manifest = build_manifest_with_all_entry_types(
+            workspace_root=Path("/workspace"),
+            source_root=source_root,
+        )
+        assert mock_tools.log_path.parent == source_root
+        events: list[SandboxSessionEvent] = []
+        client = UnixLocalSandboxClient(
+            instrumentation=Instrumentation(
+                sinks=[CallbackSink(lambda event, _session: events.append(event), mode="sync")]
+            )
+        )
+        model = TestModel()
+        model.queue_function_call(
+            "assert_manifest_materialized",
+            {},
+            call_id="call_manifest_materialized",
+        )
+        model.queue_function_call(
+            "write_file",
+            {"path": "runtime_note.txt", "content": "runtime note v1\n"},
+            call_id="call_write_runtime_note",
+        )
+        model.queue_function_call(
+            "apply_lifecycle_patch",
+            {},
+            call_id="call_apply_lifecycle_patch",
+        )
+        model.queue_function_call(
+            "assert_workspace_escape_blocked",
+            {},
+            call_id="call_assert_workspace_escape_blocked",
+        )
+        model.queue_function_call(
+            "extract_lifecycle_archive",
+            {},
+            call_id="call_extract_lifecycle_archive",
+        )
+        model.queue_function_call(
+            "start_lifecycle_pty",
+            {},
+            call_id="call_start_lifecycle_pty",
+        )
+        model.queue_function_call("approval_tool", {}, call_id="call_approval")
+    
+        @function_tool(name_override="approval_tool", needs_approval=True)
+        def approval_tool() -> str:
+            return "approved"
+    
+        agent = SandboxAgent(
+            name="sandbox",
+            model=model,
+            instructions="Use the sandbox lifecycle tools.",
+            default_manifest=manifest,
+            tools=[approval_tool],
+            capabilities=[SandboxFileCapability(), SandboxLifecycleProbeCapability()],
+        )
+    
+>       first_run = await Runner.run(
+            agent,
+            "verify the UnixLocal sandbox lifecycle and wait for approval",
+            run_config=RunConfig(sandbox=SandboxRunConfig(client=client)),
+        )
+
+tests/sandbox/integration_tests/test_runner_pause_resume.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/agents/run.py:332: in run
+    return await runner.run(
+src/agents/run.py:571: in run
+    return await self._run_impl(starting_agent, input, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/run.py:1040: in _run_impl
+    prepared_sandbox = await sandbox_runtime.prepare_agent(
+src/agents/sandbox/runtime.py:222: in prepare_agent
+    session = await self._session_manager.ensure_session(
+src/agents/sandbox/_mount_security.py:501: in wrapper
+    return await function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/runtime_session_manager.py:226: in ensure_session
+    await resources.ensure_started()
+src/agents/sandbox/runtime_session_manager.py:75: in ensure_started
+    await self._session.start()
+src/agents/sandbox/session/sandbox_session.py:66: in _wrapped
+    return await self._annotate(
+src/agents/sandbox/session/sandbox_session.py:415: in _annotate
+    value = await run()
+            ^^^^^^^^^^^
+src/agents/sandbox/session/sandbox_session.py:528: in start
+    await self._inner.start()
+src/agents/sandbox/_mount_security.py:501: in wrapper
+    return await function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/session/base_sandbox_session.py:247: in start
+    await self._start_workspace()
+src/agents/sandbox/session/base_sandbox_session.py:345: in _start_workspace
+    await self._apply_manifest(
+src/agents/sandbox/sandboxes/unix_local.py:345: in _apply_manifest
+    return await super()._apply_manifest(
+src/agents/sandbox/session/base_sandbox_session.py:1430: in _apply_manifest
+    return await manifest_ops.apply_manifest(
+src/agents/sandbox/session/manifest_ops.py:25: in apply_manifest
+    return await applier.apply_manifest(
+src/agents/sandbox/session/manifest_application.py:60: in apply_manifest
+    files=await self._apply_entry_batch(entries_to_apply, base_dir=base_dir),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/session/manifest_application.py:172: in _apply_entry_batch
+    files.extend(await self._apply_entry(artifact, dest, base_dir))
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/entries/mounts/_redaction.py:60: in wrapper
+    return await protected(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/_mount_security.py:501: in wrapper
+    return await function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/entries/mounts/base.py:473: in apply
+    return await self.mount_strategy.activate(self, session, dest, base_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/entries/mounts/_redaction.py:60: in wrapper
+    return await protected(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/_mount_security.py:501: in wrapper
+    return await function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/entries/mounts/base.py:256: in activate
+    return await mount.in_container_adapter().activate(self, session, dest, base_dir)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/entries/mounts/_redaction.py:60: in wrapper
+    return await protected(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/_mount_security.py:501: in wrapper
+    return await function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/entries/mounts/base.py:72: in activate
+    await strategy.pattern.apply(session, mount_path, config)
+src/agents/sandbox/entries/mounts/_redaction.py:60: in wrapper
+    return await protected(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/agents/sandbox/_mount_security.py:501: in wrapper
+    return await function(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = RcloneMountPattern(type='rclone', mode='fuse', remote_name=None, extra_args=[], nfs_addr=None, nfs_mount_options=None, config_file_path=None)
+session = <agents.sandbox.sandboxes.unix_local.UnixLocalSandboxSession object at 0x76c2cffc7710>
+path = PosixPath('/tmp/sandbox-local-30hlqhfa/mounts/s3')
+config = RcloneMountConfig(remote_name='sandbox_s3_a69e670c68f742fca74070b98242e30f', remote_path='s3-bucket', remote_kind='s3'...ig_text='[sandbox_s3_a69e670c68f742fca74070b98242e30f]\ntype = s3\nprovider = AWS\nenv_auth = false\n', read_only=True)
+
+    @_redact_mount_lifecycle_error
+    async def apply(
+        self,
+        session: BaseSandboxSession,
+        path: Path,
+        config: MountPatternConfig,
+    ) -> None:
+        rclone_config = _require_mount_config(config, RcloneMountConfig)
+        tool_check = await session.exec(
+            "sh",
+            "-lc",
+            "command -v rclone >/dev/null 2>&1 || test -x /usr/local/bin/rclone",
+            shell=False,
+        )
+        if not tool_check.ok():
+>           raise MountToolMissingError(
+                tool="rclone",
+                context={"type": rclone_config.mount_type},
+            )
+E           agents.sandbox.errors.MountToolMissingError: required mount tool missing: rclone
+
+src/agents/sandbox/entries/mounts/patterns.py:932: MountToolMissingError
+
+=== tests/sandbox/test_unix_local_special_files.py::test_regular_write_preserves_inode_permissions_and_umask (run 2) ===
+--- call ---
+tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-1690/test_regular_write_preserves_i0')
+
+    @pytest.mark.asyncio
+    async def test_regular_write_preserves_inode_permissions_and_umask(tmp_path: Path) -> None:
+        import io
+    
+        from .test_unix_local_file_io import _session
+    
+        session = _session(tmp_path)
+        target = tmp_path / "file"
+        target.write_bytes(b"long original contents")
+        alias = tmp_path / "hard-link"
+        os.link(target, alias)
+        target.chmod(0o200)
+        before = target.stat()
+        tmp_path.chmod(0o500)
+        try:
+            await session.write(Path("file"), io.BytesIO(b"new"))
+            after = target.stat()
+            assert (after.st_ino, after.st_uid, after.st_gid, after.st_mode) == (
+                before.st_ino,
+                before.st_uid,
+                before.st_gid,
+                before.st_mode,
+            )
+        finally:
+            tmp_path.chmod(0o700)
+            target.chmod(0o600)
+        assert alias.read_bytes() == b"new"
+    
+        previous_umask = os.umask(0o077)
+        try:
+            await session.write(Path("new"), io.BytesIO(b"private"))
+        finally:
+            os.umask(previous_umask)
+>       assert (tmp_path / "new").stat().st_mode & 0o777 == 0o600
+E       AssertionError: assert (33190 & 511) == 384
+E        +  where 33190 = os.stat_result(st_mode=33190, st_ino=3934214, st_dev=2065, st_nlink=1, st_uid=1000, st_gid=1000, st_size=7, st_atime=1795463274, st_mtime=1795463274, st_ctime=1795463274).st_mode
+E        +    where os.stat_result(st_mode=33190, st_ino=3934214, st_dev=2065, st_nlink=1, st_uid=1000, st_gid=1000, st_size=7, st_atime=1795463274, st_mtime=1795463274, st_ctime=1795463274) = stat()
+E        +      where stat = (PosixPath('/tmp/pytest-of-codespace/pytest-1690/test_regular_write_preserves_i0') / 'new').stat
+
+tests/sandbox/test_unix_local_special_files.py:171: AssertionError

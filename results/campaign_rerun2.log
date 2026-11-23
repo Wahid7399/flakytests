@@ -1,0 +1,13 @@
+suite run 5: exit=1 1102.6s
+{
+  "suite_runs": 5,
+  "isolation_reps": 5,
+  "comparison": {
+    "consistent_always_pass": 11827,
+    "consistent_always_skipped": 35,
+    "not_flaky_(iso=always_skipped,suite=always_pass)": 1,
+    "consistent_always_fail": 2
+  },
+  "tests": 11865
+}
+ALL_DONE

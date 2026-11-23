@@ -101,9 +101,9 @@ sssss................................................................... [ 15%]
 ........................................................................ [ 61%]
 ........................................................................ [ 61%]
 ........................................................................ [ 62%]
-..................................................F..................... [ 63%]
-.....................................................................F.F [ 63%]
-F....................................................................... [ 64%]
+........................................................................ [ 63%]
+........................................................................ [ 63%]
+........................................................................ [ 64%]
 ........................................................................ [ 64%]
 ........................................................................ [ 65%]
 ........................................................................ [ 66%]
@@ -166,8 +166,8 @@ F....................................................................... [ 64%]
 =================================== FAILURES ===================================
 ___ test_runner_preserves_unix_local_lifecycle_state_across_pause_and_resume ___
 
-monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb7b73bc1d0>
-tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-0/test_runner_preserves_unix_loc0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x79efbe784cb0>
+tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-1691/test_runner_preserves_unix_loc0')
 
     @pytest.mark.asyncio
     @pytest.mark.review_optional
@@ -324,9 +324,9 @@ src/agents/sandbox/_mount_security.py:501: in wrapper
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 self = RcloneMountPattern(type='rclone', mode='fuse', remote_name=None, extra_args=[], nfs_addr=None, nfs_mount_options=None, config_file_path=None)
-session = <agents.sandbox.sandboxes.unix_local.UnixLocalSandboxSession object at 0x7fb7cc150830>
-path = PosixPath('/tmp/sandbox-local-_9je5zko/mounts/s3')
-config = RcloneMountConfig(remote_name='sandbox_s3_aae1b8d730dc47a48026b01ba4ff05ca', remote_path='s3-bucket', remote_kind='s3'...ig_text='[sandbox_s3_aae1b8d730dc47a48026b01ba4ff05ca]\ntype = s3\nprovider = AWS\nenv_auth = false\n', read_only=True)
+session = <agents.sandbox.sandboxes.unix_local.UnixLocalSandboxSession object at 0x79efbe7479e0>
+path = PosixPath('/tmp/sandbox-local-kgk_nj6a/mounts/s3')
+config = RcloneMountConfig(remote_name='sandbox_s3_702ed5a849bf4449aa74869810db52ff', remote_path='s3-bucket', remote_kind='s3'...ig_text='[sandbox_s3_702ed5a849bf4449aa74869810db52ff]\ntype = s3\nprovider = AWS\nenv_auth = false\n', read_only=True)
 
     @_redact_mount_lifecycle_error
     async def apply(
@@ -352,7 +352,7 @@ E           agents.sandbox.errors.MountToolMissingError: required mount tool mis
 src/agents/sandbox/entries/mounts/patterns.py:932: MountToolMissingError
 ___________ test_regular_write_preserves_inode_permissions_and_umask ___________
 
-tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-0/test_regular_write_preserves_i0')
+tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-1691/test_regular_write_preserves_i0')
 
     @pytest.mark.asyncio
     async def test_regular_write_preserves_inode_permissions_and_umask(tmp_path: Path) -> None:
@@ -389,257 +389,11 @@ tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-0/test_regular_write_prese
             os.umask(previous_umask)
 >       assert (tmp_path / "new").stat().st_mode & 0o777 == 0o600
 E       AssertionError: assert (33190 & 511) == 384
-E        +  where 33190 = os.stat_result(st_mode=33190, st_ino=3801609, st_dev=2049, st_nlink=1, st_uid=1000, st_gid=1000, st_size=7, st_atime=1795450722, st_mtime=1795450722, st_ctime=1795450722).st_mode
-E        +    where os.stat_result(st_mode=33190, st_ino=3801609, st_dev=2049, st_nlink=1, st_uid=1000, st_gid=1000, st_size=7, st_atime=1795450722, st_mtime=1795450722, st_ctime=1795450722) = stat()
-E        +      where stat = (PosixPath('/tmp/pytest-of-codespace/pytest-0/test_regular_write_preserves_i0') / 'new').stat
+E        +  where 33190 = os.stat_result(st_mode=33190, st_ino=3942702, st_dev=2065, st_nlink=1, st_uid=1000, st_gid=1000, st_size=7, st_atime=1795463893, st_mtime=1795463893, st_ctime=1795463893).st_mode
+E        +    where os.stat_result(st_mode=33190, st_ino=3942702, st_dev=2065, st_nlink=1, st_uid=1000, st_gid=1000, st_size=7, st_atime=1795463893, st_mtime=1795463893, st_ctime=1795463893) = stat()
+E        +      where stat = (PosixPath('/tmp/pytest-of-codespace/pytest-1691/test_regular_write_preserves_i0') / 'new').stat
 
 tests/sandbox/test_unix_local_special_files.py:171: AssertionError
-_____________ test_docs_publish_static_artifact_to_existing_branch _____________
-
-tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-0/test_docs_publish_static_artif0')
-
-    @pytest.mark.skipif(shutil.which("rsync") is None, reason="Publishing uses rsync on Ubuntu")
-    def test_docs_publish_static_artifact_to_existing_branch(tmp_path: Path) -> None:
-        workflow = yaml.load(
-            (ROOT / ".github/workflows/docs.yml").read_text(encoding="utf-8"), Loader=yaml.BaseLoader
-        )
-        publish = next(
-            step
-            for step in workflow["jobs"]["deploy_docs"]["steps"]
-            if step["name"] == "Publish static files"
-        )
-        remote = tmp_path / "remote.git"
-        remote.mkdir()
-        _git(remote, "init", "--bare", "--initial-branch=gh-pages")
-        published = tmp_path / "published"
-        _git(tmp_path, "clone", remote.as_posix(), published.as_posix())
-        _git(published, "config", "user.name", "Docs test")
-        _git(published, "config", "user.email", "docs@example.invalid")
-        initial = _commit(published, "old.html")
-        _git(published, "push", "origin", "HEAD:gh-pages")
-        site = tmp_path / "site"
-        site.mkdir()
-        (site / "index.html").write_text("<h1>Updated documentation</h1>", encoding="utf-8")
-        (site / ".well-known").mkdir()
-        (site / ".well-known" / "example.txt").write_text("static metadata", encoding="utf-8")
-        # Build output is data and must never replace the publisher's Git configuration.
-        (site / ".git").mkdir()
-        (site / ".git" / "config").write_text("artifact metadata", encoding="utf-8")
-        config = (published / ".git" / "config").read_bytes()
-        env = _environment()
-        env["GITHUB_SHA"] = "2" * 40
-        for _ in range(2):
-            subprocess.run(
-                ["bash", "-euo", "pipefail", "-c", publish["run"]],
-                cwd=tmp_path,
-                env=env,
-                check=True,
-                capture_output=True,
-                text=True,
-                timeout=20,
-            )
->       assert _git(remote, "rev-list", "--count", f"{initial}..gh-pages") == "1"
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-tests/test_change_detection.py:442: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-tests/test_change_detection.py:32: in _git
-    return subprocess.run(
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-input = None, capture_output = True, timeout = 60, check = True
-popenargs = (['git', '-C', '/tmp/pytest-of-codespace/pytest-0/test_docs_publish_static_artif0/remote.git', 'rev-list', '--count', '54ae7d2f0c481c6059643ac02c13e88250a74ccb..gh-pages'],)
-kwargs = {'env': {'AI_AGENT': 'github_copilot_vscode_agent', 'ANTHROPIC_ADVISOR': 'false', 'AUTO_APPROVAL': 'true', 'AUTO_LOCAL_ROUTING': 'false', ...}, 'stderr': -1, 'stdout': -1, 'text': True}
-process = <Popen: returncode: 128 args: ['git', '-C', '/tmp/pytest-of-codespace/pytest...>
-stdout = ''
-stderr = "fatal: cannot use bare repository '/tmp/pytest-of-codespace/pytest-0/test_docs_publish_static_artif0/remote.git' (safe.bareRepository is 'explicit')\n"
-retcode = 128
-
-    def run(*popenargs,
-            input=None, capture_output=False, timeout=None, check=False, **kwargs):
-        """Run command with arguments and return a CompletedProcess instance.
-    
-        The returned instance will have attributes args, returncode, stdout and
-        stderr. By default, stdout and stderr are not captured, and those attributes
-        will be None. Pass stdout=PIPE and/or stderr=PIPE in order to capture them,
-        or pass capture_output=True to capture both.
-    
-        If check is True and the exit code was non-zero, it raises a
-        CalledProcessError. The CalledProcessError object will have the return code
-        in the returncode attribute, and output & stderr attributes if those streams
-        were captured.
-    
-        If timeout is given, and the process takes too long, a TimeoutExpired
-        exception will be raised.
-    
-        There is an optional argument "input", allowing you to
-        pass bytes or a string to the subprocess's stdin.  If you use this argument
-        you may not also use the Popen constructor's "stdin" argument, as
-        it will be used internally.
-    
-        By default, all communication is in bytes, and therefore any "input" should
-        be bytes, and the stdout and stderr will be bytes. If in text mode, any
-        "input" should be a string, and stdout and stderr will be strings decoded
-        according to locale encoding, or by "encoding" if set. Text mode is
-        triggered by setting any of text, encoding, errors or universal_newlines.
-    
-        The other arguments are the same as for the Popen constructor.
-        """
-        if input is not None:
-            if kwargs.get('stdin') is not None:
-                raise ValueError('stdin and input arguments may not both be used.')
-            kwargs['stdin'] = PIPE
-    
-        if capture_output:
-            if kwargs.get('stdout') is not None or kwargs.get('stderr') is not None:
-                raise ValueError('stdout and stderr arguments may not be used '
-                                 'with capture_output.')
-            kwargs['stdout'] = PIPE
-            kwargs['stderr'] = PIPE
-    
-        with Popen(*popenargs, **kwargs) as process:
-            try:
-                stdout, stderr = process.communicate(input, timeout=timeout)
-            except TimeoutExpired as exc:
-                process.kill()
-                if _mswindows:
-                    # Windows accumulates the output in a single blocking
-                    # read() call run on child threads, with the timeout
-                    # being done in a join() on those threads.  communicate()
-                    # _after_ kill() is required to collect that and add it
-                    # to the exception.
-                    exc.stdout, exc.stderr = process.communicate()
-                else:
-                    # POSIX _communicate already populated the output so
-                    # far into the TimeoutExpired exception.
-                    process.wait()
-                raise
-            except:  # Including KeyboardInterrupt, communicate handled that.
-                process.kill()
-                # We don't call process.wait() as .__exit__ does that for us.
-                raise
-            retcode = process.poll()
-            if check and retcode:
->               raise CalledProcessError(retcode, process.args,
-                                         output=stdout, stderr=stderr)
-E               subprocess.CalledProcessError: Command '['git', '-C', '/tmp/pytest-of-codespace/pytest-0/test_docs_publish_static_artif0/remote.git', 'rev-list', '--count', '54ae7d2f0c481c6059643ac02c13e88250a74ccb..gh-pages']' returned non-zero exit status 128.
-
-/usr/lib/python3.12/subprocess.py:571: CalledProcessError
-____________ test_cancellation_before_wait_stops_the_active_step[2] ____________
-
-tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-0/test_cancellation_before_wait_0')
-interrupt = <Signals.SIGINT: 2>
-
-    @pytest.mark.parametrize("interrupt", [signal.SIGINT, signal.SIGTERM])
-    def test_cancellation_before_wait_stops_the_active_step(
-        tmp_path: Path, interrupt: signal.Signals
-    ) -> None:
-        with _run(tmp_path, interrupt_before_wait=interrupt) as run:
->           assert run.process.wait(timeout=10) == 128 + interrupt, run.output()
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-tests/test_code_change_verification_runner.py:366: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-/usr/lib/python3.12/subprocess.py:1264: in wait
-    return self._wait(timeout=timeout)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-self = <Popen: returncode: 143 args: ['bash', '-c', '\nwait() {\n  if [ -z "${cance...>
-timeout = 10
-
-    def _wait(self, timeout):
-        """Internal implementation of wait() on POSIX."""
-        if self.returncode is not None:
-            return self.returncode
-    
-        if timeout is not None:
-            endtime = _time() + timeout
-            # Enter a busy loop if we have a timeout.  This busy loop was
-            # cribbed from Lib/threading.py in Thread.wait() at r71065.
-            delay = 0.0005 # 500 us -> initial delay of 1 ms
-            while True:
-                if self._waitpid_lock.acquire(False):
-                    try:
-                        if self.returncode is not None:
-                            break  # Another thread waited.
-                        (pid, sts) = self._try_wait(os.WNOHANG)
-                        assert pid == self.pid or pid == 0
-                        if pid == self.pid:
-                            self._handle_exitstatus(sts)
-                            break
-                    finally:
-                        self._waitpid_lock.release()
-                remaining = self._remaining_time(endtime)
-                if remaining <= 0:
->                   raise TimeoutExpired(self.args, timeout)
-E                   subprocess.TimeoutExpired: Command '['bash', '-c', '\nwait() {\n  if [ -z "${cancel_sent:-}" ]; then\n    cancel_sent=1\n    while [ ! -f "${DRIVER_TEST_ROOT}/format.started" ] ||\n          [ ! -f "${DRIVER_TEST_ROOT}/format.child" ]; do\n      sleep 0.01\n    done\n    kill -SIGINT "$$"\n  fi\n  builtin wait "$@"\n}\nsource "$1"\n', 'bash', '/workspaces/flakytests/projects/openai-agents-python/.agents/skills/code-change-verification/scripts/run.sh']' timed out after 10 seconds
-
-/usr/lib/python3.12/subprocess.py:2045: TimeoutExpired
-______________ test_cancellation_reaps_owned_processes[2-format] _______________
-
-tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-0/test_cancellation_reaps_owned_0')
-phase = 'format', interrupt = <Signals.SIGINT: 2>
-
-    @pytest.mark.parametrize("phase", ["format", "tests"])
-    @pytest.mark.parametrize("interrupt", [signal.SIGINT, signal.SIGTERM])
-    def test_cancellation_reaps_owned_processes(
-        tmp_path: Path, phase: str, interrupt: signal.Signals
-    ) -> None:
-        with _run(tmp_path) as run:
-            for step in _STEPS[: _STEPS.index(phase)]:
-                run.ready(step)
-                run.release(step)
-                run.passed(step)
-            run.ready(phase)
-            run.process.send_signal(interrupt)
->           _await(lambda: (tmp_path / f"{phase}.terminated").exists())
-
-tests/test_code_change_verification_runner.py:386: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-predicate = <function test_cancellation_reaps_owned_processes.<locals>.<lambda> at 0x7fb7b3e5bd80>
-
-    def _await(predicate: Callable[[], bool]) -> None:
-        deadline = time.monotonic() + 15
-        while not predicate():
-            if time.monotonic() >= deadline:
->               pytest.fail("Timed out waiting for a controlled process transition")
-E               Failed: Timed out waiting for a controlled process transition
-
-tests/test_code_change_verification_runner.py:73: Failed
-_______________ test_cancellation_reaps_owned_processes[2-tests] _______________
-
-tmp_path = PosixPath('/tmp/pytest-of-codespace/pytest-0/test_cancellation_reaps_owned_1')
-phase = 'tests', interrupt = <Signals.SIGINT: 2>
-
-    @pytest.mark.parametrize("phase", ["format", "tests"])
-    @pytest.mark.parametrize("interrupt", [signal.SIGINT, signal.SIGTERM])
-    def test_cancellation_reaps_owned_processes(
-        tmp_path: Path, phase: str, interrupt: signal.Signals
-    ) -> None:
-        with _run(tmp_path) as run:
-            for step in _STEPS[: _STEPS.index(phase)]:
-                run.ready(step)
-                run.release(step)
-                run.passed(step)
-            run.ready(phase)
-            run.process.send_signal(interrupt)
->           _await(lambda: (tmp_path / f"{phase}.terminated").exists())
-
-tests/test_code_change_verification_runner.py:386: 
-_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-
-predicate = <function test_cancellation_reaps_owned_processes.<locals>.<lambda> at 0x7fb7b41e9a80>
-
-    def _await(predicate: Callable[[], bool]) -> None:
-        deadline = time.monotonic() + 15
-        while not predicate():
-            if time.monotonic() >= deadline:
->               pytest.fail("Timed out waiting for a controlled process transition")
-E               Failed: Timed out waiting for a controlled process transition
-
-tests/test_code_change_verification_runner.py:73: Failed
 =============================== warnings summary ===============================
 tests/realtime/test_twilio_example.py::test_transport_closes_before_disconnect_is_received[False]
   /workspaces/flakytests/projects/openai-agents-python/.venv/lib/python3.12/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
@@ -658,8 +412,4 @@ tests/realtime/test_twilio_example.py::test_transport_closes_before_disconnect_i
 =========================== short test summary info ============================
 FAILED tests/sandbox/integration_tests/test_runner_pause_resume.py::test_runner_preserves_unix_local_lifecycle_state_across_pause_and_resume
 FAILED tests/sandbox/test_unix_local_special_files.py::test_regular_write_preserves_inode_permissions_and_umask
-FAILED tests/test_change_detection.py::test_docs_publish_static_artifact_to_existing_branch
-FAILED tests/test_code_change_verification_runner.py::test_cancellation_before_wait_stops_the_active_step[2]
-FAILED tests/test_code_change_verification_runner.py::test_cancellation_reaps_owned_processes[2-format]
-FAILED tests/test_code_change_verification_runner.py::test_cancellation_reaps_owned_processes[2-tests]
-6 failed, 11824 passed, 35 skipped, 4 warnings in 1036.57s (0:17:16)
+2 failed, 11828 passed, 35 skipped, 4 warnings in 606.64s (0:10:06)
