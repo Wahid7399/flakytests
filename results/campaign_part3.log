@@ -1,0 +1,13 @@
+isolation shard 0/1: exit=0 137.0s
+{
+  "suite_runs": 20,
+  "isolation_reps": 10,
+  "comparison": {
+    "consistent_always_pass": 4114,
+    "consistent_always_skipped": 6
+  },
+  "tests": 4120
+}
+suite run 3: exit=1 1050.9s
+suite run 4: exit=1 628.3s
+suite run 5: exit=1 628.7s

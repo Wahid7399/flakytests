@@ -82638,3 +82638,63 @@ semantic_kernel/memory/null_memory.py:60
     NullMemory.instance = NullMemory()  # type: ignore
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/flaml/__init__.py:20
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/flaml/__init__.py:20: UserWarning: flaml.automl is not available. Please install flaml[automl] to enable AutoML functionalities.
+    warnings.warn("flaml.automl is not available. Please install flaml[automl] to enable AutoML functionalities.")
+
+.venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2371
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:2371: PydanticDeprecatedSince211: The `__get_pydantic_core_schema__` method of the `BaseModel` class is deprecated. If you are calling `super().__get_pydantic_core_schema__` when overriding the method on a Pydantic model, consider using `handler(source)` instead. However, note that overriding this method on models can lead to unexpected side effects. Deprecated in Pydantic V2.11 to be removed in V3.0.
+    schema = annotation_get_schema(source, get_inner_schema)
+
+tests/unit/agents/test_agent.py:333
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/agents/test_agent.py:333: PytestCollectionWarning: cannot collect test class 'TestAgent' because it has a __init__ constructor (from: tests/unit/agents/test_agent.py)
+    @register_agent_type("test_agent")
+
+.venv/lib/python3.12/site-packages/google/cloud/aiplatform/models.py:52
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/google/cloud/aiplatform/models.py:52: FutureWarning: Support for google-cloud-storage < 3.0.0 will be removed in a future version of google-cloud-aiplatform. Please upgrade to google-cloud-storage >= 3.0.0.
+    from google.cloud.aiplatform.utils import gcs_utils
+
+semantic_kernel/connectors/ai/google/vertex_ai/__init__.py:5
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/connectors/ai/google/vertex_ai/__init__.py:5: DeprecationWarning: The semantic_kernel.connectors.ai.google.vertex_ai module is deprecated and will be removed after 01/01/2026. Please use semantic_kernel.connectors.ai.google instead for Google AI services.
+    from semantic_kernel.connectors.ai.google.vertex_ai.services.vertex_ai_chat_completion import VertexAIChatCompletion
+
+<frozen abc>:106
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: VertexAIPromptExecutionSettings is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+
+<frozen abc>:106
+<frozen abc>:106
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: VertexAIBase is deprecated and will be removed after 01/01/2026. Use google_ai connectors instead.
+
+tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:10
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/connectors/ai/google/vertex_ai/services/test_vertex_ai_chat_completion.py:10: DeprecationWarning: The `semantic_kernel.connectors.ai.google.vertex_ai` package is deprecated and will be removed after 01/01/2026. Please use `semantic_kernel.connectors.ai.google` instead for Google AI services.
+    from semantic_kernel.connectors.ai.google.vertex_ai.services.vertex_ai_chat_completion import VertexAIChatCompletion
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+<frozen importlib._bootstrap>:488
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+.venv/lib/python3.12/site-packages/openapi_core/spec/paths.py:9
+  /workspaces/flakytests/projects/semantic-kernel/python/.venv/lib/python3.12/site-packages/openapi_core/spec/paths.py:9: DeprecationWarning: Spec is deprecated. Use SchemaPath from jsonschema-path package.
+    warnings.warn(
+
+<frozen abc>:106
+  <frozen abc>:106: DeprecationWarning: This class will be removed in a future version.
+
+tests/unit/processes/test_process_step_builder.py:18
+  /workspaces/flakytests/projects/semantic-kernel/python/tests/unit/processes/test_process_step_builder.py:18: PytestCollectionWarning: cannot collect test class 'TestFunctionEnum' because it has a __init__ constructor (from: tests/unit/processes/test_process_step_builder.py)
+    class TestFunctionEnum(Enum):
+
+semantic_kernel/memory/null_memory.py:60
+  /workspaces/flakytests/projects/semantic-kernel/python/semantic_kernel/memory/null_memory.py:60: DeprecationWarning: This class will be removed in a future version.
+    NullMemory.instance = NullMemory()  # type: ignore
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
